@@ -19,6 +19,7 @@ Realizado con Windows y software/plataformas gratuitas.
 ## Capítulos
 
 - [#1 - Intro y primeros pasos](https://www.youtube.com/watch?v=6UvW9_NcaFg&t=2s)
+- [#2 - Sacando artículos de elpais](https://www.youtube.com/watch?v=-OpVafOml8o)
 
 ## Enlaces de interés
 
