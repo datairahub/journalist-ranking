@@ -35,10 +35,10 @@ def parse_elpaiscom_date(datestr):
         'nov': '11',
         'dic': '12',
     }
-    matchs = re.search('\d+ \w{3} \d{4}', datestr)
-    day_matchs = re.search('\d+', datestr)
-    month_matchs = re.search('\w{3}', datestr)
-    year_matchs = re.search('\d{4}', datestr)
+    matchs = re.search(r'\d+ \w{3} \d{4}', datestr)
+    day_matchs = re.search(r'\d+', datestr)
+    month_matchs = re.search(r'\w{3}', datestr)
+    year_matchs = re.search(r'\d{4}', datestr)
     fecha = matchs[0]
     year = year_matchs[0]
     day = day_matchs[0]
