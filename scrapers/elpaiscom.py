@@ -1,3 +1,4 @@
+# -*- coding: UTF-8 -*-
 import re
 import os
 import csv
@@ -57,7 +58,7 @@ def scraper_portada():
     with open(output_path, mode='w', newline='') as output_file:
         writer = csv.writer(output_file, delimiter=',', quotechar='"',)
         for noti in notis:
-            titulo = noti.get_text().strip().encode('utf-8')
+            titulo = noti.get_text().strip()
             if len(noti.select('a')):
                 enlace = noti.select('a')[0]['href'].strip()
                 if enlace.startswith('/'):
@@ -120,7 +121,7 @@ def scraper_articulos():
 
                         # Get author profile
                         if len(autor.select(autor_class)):
-                            autor_nombre = autor.select(autor_class)[0].get_text().encode('utf-8')
+                            autor_nombre = autor.select(autor_class)[0].get_text()
                             autor_enlace = autor.select(autor_class)[0]['href']
                         else:
                             autor_nombre = '?'
@@ -140,9 +141,9 @@ def scraper_articulos():
                     article_path = os.path.join(articles_dir, nombre)
                     with open(article_path, mode='w', newline='') as article_file:
                         for section in sections:
-                            article_file.write(str(section.get_text().encode('utf-8')))
+                            article_file.write(section.get_text())
 
 
 if __name__ == "__main__":
-    # scraper_portada()
+    scraper_portada()
     scraper_articulos()
