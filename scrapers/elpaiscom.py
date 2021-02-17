@@ -31,7 +31,7 @@ def parse_elpaiscom_date(datestr):
         'jul': '07',
         'ago': '08',
         'sep': '09',
-        'pct': '10',
+        'oct': '10',
         'nov': '11',
         'dic': '12',
     }
