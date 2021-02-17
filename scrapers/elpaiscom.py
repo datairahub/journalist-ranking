@@ -35,16 +35,12 @@ def parse_elpaiscom_date(datestr):
         'nov': '11',
         'dic': '12',
     }
-    matchs = re.search(r'\d+ \w{3} \d{4}', datestr)
-    day_matchs = re.search(r'\d+', datestr)
-    month_matchs = re.search(r'\w{3}', datestr)
-    year_matchs = re.search(r'\d{4}', datestr)
-    fecha = matchs[0]
-    year = year_matchs[0]
-    day = day_matchs[0]
-    month = months_dict.get(month_matchs[0])
+    matchs = re.search(r'(\d+) (\w{3}) (\d{4})', datestr)
 
-    return f"{year}-{month}-{day}"
+    day = f"0{matchs[1]}" if len(matchs[1]) == 1 else matchs[1]
+    month = months_dict.get(matchs[2])
+
+    return f"{matchs[3]}-{month}-{day}"
 
 def scraper_portada():
     response = request.Request(PORTADA)
